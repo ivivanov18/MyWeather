@@ -1,18 +1,25 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 
+import globalStyles from "../Styles";
+
 class About extends Component {
   static navigationOptions = {};
 
+  search = () => {
+    console.log(this.props.navigation);
+    this.props.navigation.navigate("Search");
+  };
+
   render() {
     return (
-      <View style={style.view}>
-        <Text style={style.title}>About me</Text>
-        <Text>
+      <View style={globalStyles.container}>
+        <Text style={globalStyles.title}>About me</Text>
+        <Text style={{ margin: 20 }}>
           Software Engineer that is passionate about learning how to design
           better IT systems and about Web Technologies.
         </Text>
-        <Text>
+        <Text style={{ margin: 20 }}>
           This app was developed from the GREAT tutorial of Grafikart on
           Youtube. The tutorial is in French and you can find on the following
           address: https://www.youtube.com/watch?v=Y7rbJRjaYCY
@@ -25,11 +32,9 @@ class About extends Component {
 
 const style = StyleSheet.create({
   view: {
-    margin: 20
-  },
-  title: {
-    fontSize: 22,
-    marginBottom: 20
+    margin: 20,
+    marginTop: 50,
+    backgroundColor: "#B5E0D8"
   }
 });
 

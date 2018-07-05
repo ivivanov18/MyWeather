@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import {} from "react-native";
-import { TextInput } from "react-native-gesture-handler";
+import { TextInput, View, StyleSheet, Button } from "react-native";
+
+import globalStyles from "../Styles";
 
 class Search extends Component {
   constructor(props) {
@@ -13,16 +15,28 @@ class Search extends Component {
   setCity = city => {
     this.setState({ city: city });
   };
+
+  search = () => {
+    console.log("Search");
+  };
+
   render() {
     return (
-      <TextInput
-        onChangeText={text => {
-          this.setCity(text);
-        }}
-        underlineColorAndroid="transparent"
-        style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-        value={this.state.city}
-      />
+      <View style={globalStyles.container}>
+        <TextInput
+          onChangeText={text => {
+            this.setCity(text);
+          }}
+          underlineColorAndroid="transparent"
+          style={globalStyles.input}
+          value={this.state.city}
+        />
+        <Button
+          color={globalStyles.color}
+          title="Search for a city"
+          onPress={() => this.search()}
+        />
+      </View>
     );
   }
 }
