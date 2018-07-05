@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 
 class About extends Component {
+  static navigationOptions = {};
+
   render() {
     return (
       <View style={style.view}>
@@ -15,6 +17,7 @@ class About extends Component {
           Youtube. The tutorial is in French and you can find on the following
           address: https://www.youtube.com/watch?v=Y7rbJRjaYCY
         </Text>
+        <Button onPress={() => this.search()} title="Search" />
       </View>
     );
   }
