@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import {} from "react-native";
 import { TextInput, View, StyleSheet, Button } from "react-native";
+import { createStackNavigator } from "react-navigation";
 
+import Result from "./Result";
 import globalStyles from "../Styles";
 
 class Search extends Component {
@@ -17,6 +18,7 @@ class Search extends Component {
   };
 
   search = () => {
+    this.props.navigation.navigate("Result");
     console.log("Search");
   };
 
@@ -41,4 +43,11 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default createStackNavigator({
+  Search: {
+    screen: Search
+  },
+  Result: {
+    screen: Result
+  }
+});
