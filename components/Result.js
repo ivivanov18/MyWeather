@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
 class Result extends Component {
-  static navigationOptions = {
-    title: "Weather in / "
+  static navigationOptions = ({ navigation }) => {
+    //console.log("PARAMS : ", params);
+    return {
+      title: `Weather in / ${navigation.state.params.city}`
+    };
   };
 
   constructor(props) {
     super(props);
-    console.log("state", this.props.navigation.state);
     this.state = {
-      city: "",
+      city: this.props.navigation.state.params.city,
       report: null
     };
   }
