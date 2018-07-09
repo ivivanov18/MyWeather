@@ -3,15 +3,15 @@ import { View, Text } from "react-native";
 class Result extends Component {
   static navigationOptions = ({ navigation }) => {
     //console.log("PARAMS : ", params);
-    return {
+    /*return {
       title: `Weather in / ${navigation.state.params.city}`
-    };
+    };*/
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      city: this.props.navigation.state.params.city,
+      city: "Sofia", //this.props.navigation.state.params.city,
       report: null
     };
   }
