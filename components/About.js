@@ -4,8 +4,6 @@ import { View, Text, StyleSheet, Button } from "react-native";
 import globalStyles from "../Styles";
 
 class About extends Component {
-  static navigationOptions = {};
-
   search = () => {
     console.log(this.props.navigation);
     this.props.navigation.navigate("Search");

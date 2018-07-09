@@ -6,6 +6,10 @@ import Result from "./Result";
 import globalStyles from "../Styles";
 
 class Search extends Component {
+  static navigationOptions = {
+    title: "Look for a city"
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -17,8 +21,8 @@ class Search extends Component {
     this.setState({ city: city });
   };
 
-  search = () => {
-    this.props.navigation.navigate("Result");
+  submit = () => {
+    this.props.navigation.navigate("Result", { city: this.state.city });
     console.log("Search");
   };
 
@@ -36,18 +40,25 @@ class Search extends Component {
         <Button
           color={globalStyles.color}
           title="Search for a city"
-          onPress={() => this.search()}
+          onPress={() => this.submit()}
         />
       </View>
     );
   }
 }
 
+const navigationOptions = {
+  headerStyle: globalStyles.header,
+  headerTitleStyle: globalStyles.headerTitle
+};
+
 export default createStackNavigator({
   Search: {
-    screen: Search
+    screen: Search,
+    navigationOptions
   },
   Result: {
-    screen: Result
+    screen: Result,
+    navigationOptions
   }
 });

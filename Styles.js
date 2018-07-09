@@ -1,7 +1,11 @@
+const blue = "#199BB4";
+const green = "#B5E0D8";
+
 export default {
-  color: "#199BB4",
+  color: blue,
   container: {
-    margin: 20
+    margin: 20,
+    backgroundColor: green
   },
   title: {
     fontSize: 22,
@@ -9,7 +13,7 @@ export default {
     textAlign: "center"
   },
   button: {
-    backgroundColor: "#A2273C",
+    backgroundColor: blue,
     color: "#FFFFFF"
   },
   input: {
@@ -18,6 +22,12 @@ export default {
     borderWidth: 1,
     marginBottom: 20,
     paddingHorizontal: 10
+  },
+  header: {
+    backgroundColor: blue
+  },
+  headerTitle: {
+    color: "#FFF"
   }
 };
 
