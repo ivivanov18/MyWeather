@@ -12,6 +12,7 @@ The tutorial is in French.
 
 ## Erros and learnt lessons
 
-This section provides a list of the potential errors that happened during the development process, as well as, their correction:
+This section provides a list of the potential errors that happened during the development process, as well as, their correction and can therefore serve as a database of errors/corrections and lessons learnt for future developments.
 
 - `Invariant Violation: Tried to get frame for out of range index NaN`: This is due to the fact that an object was provided to the FlatList `data` prop, more precisely the `response.data` from the axios get method. To correct it ensure that it is the list with results and not the object: `response.data` --> `response.data.list`
+- `Cannot read property "object" of undefined`: problem with `static propTypes = {day: React.PropTypes.object, index: React.PropTypes.number`

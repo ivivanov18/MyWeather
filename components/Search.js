@@ -15,6 +15,7 @@ class Search extends Component {
     this.state = {
       city: "Sofia"
     };
+    console.log("SOFIA");
   }
 
   setCity = city => {
