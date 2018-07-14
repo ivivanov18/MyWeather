@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from "react-navigation";
 import About from "./components/About";
 import Search from "./components/Search";
 
+import globalStyles from "./Styles";
+
 const Tabs = createBottomTabNavigator(
   {
     About: About,
@@ -19,7 +21,7 @@ const Tabs = createBottomTabNavigator(
         textAlignVertical: "center"
       },
       style: {
-        backgroundColor: "#199BB4",
+        backgroundColor: globalStyles.color,
         height: 30
       }
     }
@@ -40,6 +42,6 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#B5E0D8"
+    backgroundColor: globalStyles.greenColor
   }
 });

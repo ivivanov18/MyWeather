@@ -1,8 +1,12 @@
 const blue = "#199BB4";
-const green = "#B5E0D8";
+//const green = "#B5E0D8";
+const greenDark = "#00b386";
+const green = "#00cc99";
 
 export default {
-  color: blue,
+  greenColor: green,
+  blueColor: blue,
+  color: greenDark,
   container: {
     margin: 20,
     backgroundColor: green
@@ -13,7 +17,7 @@ export default {
     textAlign: "center"
   },
   button: {
-    backgroundColor: blue,
+    backgroundColor: greenDark,
     color: "#FFFFFF"
   },
   input: {
@@ -24,20 +28,9 @@ export default {
     paddingHorizontal: 10
   },
   header: {
-    backgroundColor: blue
+    backgroundColor: greenDark
   },
   headerTitle: {
     color: "#FFF"
   }
 };
-
-/*
-const styles = StyleSheet.create({
-  view: {
-    margin: 20,
-    marginTop: 50,
-    backgroundColor: "#B5E0D8"
-  }
-});
-
-*/

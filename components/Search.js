@@ -54,12 +54,12 @@ const navigationOptions = {
 };
 
 export default createStackNavigator({
-  Result: {
-    screen: Result,
-    navigationOptions
-  },
   Search: {
     screen: Search,
+    navigationOptions
+  },
+  Result: {
+    screen: Result,
     navigationOptions
   }
 });

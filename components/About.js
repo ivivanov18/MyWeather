@@ -32,7 +32,7 @@ const style = StyleSheet.create({
   view: {
     margin: 20,
     marginTop: 50,
-    backgroundColor: "#B5E0D8"
+    backgroundColor: globalStyles.color
   }
 });
 
