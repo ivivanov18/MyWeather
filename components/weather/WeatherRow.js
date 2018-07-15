@@ -4,6 +4,7 @@ import moment from "moment";
 import "moment/locale/fr";
 
 import globalStyles from "../../Styles";
+import FadeInView from "../animation/FadeInView";
 
 moment.locale("fr");
 
@@ -50,32 +51,36 @@ class WeatherRow extends Component {
   render() {
     if (this.props.index === 0) {
       return (
-        <View style={[styles.view, styles.flex, styles.firstView]}>
-          <View>
-            <Text style={{ color: "#FFF" }}>
-              {this.day()} {this.date()}{" "}
+        <FadeInView delay={this.props.index * 50}>
+          <View style={[styles.view, styles.flex, styles.firstView]}>
+            <View>
+              <Text style={{ color: "#FFF" }}>
+                {this.day()} {this.date()}{" "}
+              </Text>
+              {this.icon(90)}
+            </View>
+            <Text style={[styles.temp, { fontSize: 35 }]}>
+              {Math.round(this.props.day.main.temp)} °C
             </Text>
-            {this.icon(90)}
           </View>
-          <Text style={[styles.temp, { fontSize: 35 }]}>
-            {Math.round(this.props.day.main.temp)} °C
-          </Text>
-        </View>
+        </FadeInView>
       );
     } else {
       return (
-        <View style={[styles.view, styles.flex]}>
-          <View style={styles.flex}>
-            {this.icon()}
+        <FadeInView delay={this.props.index * 50}>
+          <View style={[styles.view, styles.flex]}>
+            <View style={styles.flex}>
+              {this.icon()}
 
-            <Text style={{ marginLeft: 20 }}>
-              {this.day()} {this.date()}{" "}
+              <Text style={{ marginLeft: 20 }}>
+                {this.day()} {this.date()}{" "}
+              </Text>
+            </View>
+            <Text style={styles.temp}>
+              {Math.round(this.props.day.main.temp)} °C
             </Text>
           </View>
-          <Text style={styles.temp}>
-            {Math.round(this.props.day.main.temp)} °C
-          </Text>
-        </View>
+        </FadeInView>
       );
     }
   }

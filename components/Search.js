@@ -34,6 +34,9 @@ class Search extends Component {
           onChangeText={text => {
             this.setCity(text);
           }}
+          onSubmitEditing={text => {
+            this.setCity(text);
+          }}
           underlineColorAndroid="transparent"
           style={globalStyles.input}
           value={this.state.city}
